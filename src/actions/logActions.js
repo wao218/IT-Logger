@@ -1,5 +1,7 @@
 import { GET_LOGS, SET_LOADING, LOGS_ERROR } from './types';
 
+
+// Get logs from server
 export const getLogs = () => {
   return async (dispatch) => {
     try {
@@ -15,7 +17,7 @@ export const getLogs = () => {
     } catch (error) {
        dispatch({
         type: LOGS_ERROR,
-        payload: err.response.data
+        payload: error.response.data
        });
     }
   }
